@@ -1,0 +1,40 @@
+@import './null.css';
+@import './fonts.css';
+@import './mixins.scss';
+
+.header {
+	position: fixed;
+	display: flex;
+	justify-content: space-between;
+	background-color: #5F515E;
+	padding: 24px 100px;
+	width: 100%;
+
+	&__logo {
+
+	}
+
+	&__nav {
+		display: flex;
+		align-items: center;
+	}
+
+	&__list {
+		display: flex;
+		gap: 52px;
+	}
+
+	&__item {
+
+	}
+
+	&__link {
+		@include fontSettings('Montserrat', 400, 16px, 20px, #fff);
+	}
+}
+
+
+
+
+
+
