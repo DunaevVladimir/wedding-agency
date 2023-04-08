@@ -1,0 +1,15 @@
+.button {
+	@include fontSettings('Montserrat', 500, 16px, 1.25, #1E1E1E);
+	padding: 20px 55px;
+	border-radius: 40px;
+	cursor: pointer;
+	background-color: #EAE3DB;
+	transition: all 0.5s ease;
+		&:hover {
+			background-color: $hover;
+		}
+
+		&:disabled {
+			background-color: $disabled;
+		}
+}

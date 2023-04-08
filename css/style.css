@@ -1,36 +1,508 @@
-@import './null.css';
-@import './fonts.css';
+@import './global/null.css';
+@import './global/fonts.css';
+.title {
+  font-family: "Poiret One";
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 1.16;
+  color: #1E1E1E;
+  margin-bottom: 70px;
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.title._white-mb30 {
+  color: #fff;
+  margin-bottom: 30px;
+}
+@media (max-width: 767px) {
+  .title._white-mb30 {
+    margin-bottom: 162px;
+  }
+}
+.title._decor {
+  max-width: 1030px;
+}
+.title._decor::after {
+  content: "";
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 38%;
+  height: 1px;
+  width: 39%;
+  background-color: #000;
+}
+@media (max-width: 1024px) {
+  .title {
+    font-family: "Poiret One";
+    font-weight: 400;
+    font-size: 45px;
+    line-height: 1.16;
+    color: #1E1E1E;
+  }
+}
+@media (max-width: 767px) {
+  .title {
+    font-family: "Poiret One";
+    font-weight: 400;
+    font-size: 35px;
+    line-height: 1.16;
+    color: #1E1E1E;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  .title._decor::after {
+    bottom: -11px;
+    right: -10px;
+    width: 70%;
+  }
+}
+
+.button {
+  font-family: "Montserrat";
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #1E1E1E;
+  padding: 20px 55px;
+  border-radius: 40px;
+  cursor: pointer;
+  background-color: #EAE3DB;
+  -webkit-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+.button:hover {
+  background-color: #F0DDC6;
+}
+.button:disabled {
+  background-color: #EEECE9;
+}
+
 .header {
   position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #5F515E;
+  width: 100%;
+  z-index: 10;
+}
+.header__body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  background-color: #5F515E;
-  padding: 24px 100px;
-  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-column-gap: 50px;
+     -moz-column-gap: 50px;
+          column-gap: 50px;
+  padding: 23px 0;
+  min-height: 100px;
 }
-.header__nav {
+@media (max-width: 767px) {
+  .header__body {
+    padding: 11px 0;
+    min-height: 60px;
+  }
+}
+.header__logotip {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 77px;
+          flex: 0 0 77px;
+  z-index: 5;
+}
+@media (max-width: 767px) {
+  .header__logotip {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 55px;
+            flex: 0 0 55px;
+    max-height: 38px;
+  }
+}
+.header__logo {
+  width: 100%;
+  height: 100%;
+}
+.menu__icon {
+  display: none;
+}
+@media (max-width: 767px) {
+  .menu__icon {
+    z-index: 5;
+    display: block;
+    position: relative;
+    width: 18px;
+    height: 16px;
+    cursor: pointer;
+  }
+  .menu__icon span, .menu__icon::after, .menu__icon::before {
+    position: absolute;
+    left: 0;
+    height: 10%;
+    width: 100%;
+    -webkit-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: #fff;
+  }
+  .menu__icon::after, .menu__icon::before {
+    content: "";
+  }
+  .menu__icon::after {
+    bottom: 0;
+  }
+  .menu__icon::before {
+    top: 0;
+  }
+  .menu__icon span {
+    top: 50%;
+    -webkit-transform: scale(1) translate(0px, -50%);
+        -ms-transform: scale(1) translate(0px, -50%);
+            transform: scale(1) translate(0px, -50%);
+  }
+  .menu__icon._active span {
+    -webkit-transform: scale(0);
+        -ms-transform: scale(0);
+            transform: scale(0);
+  }
+  .menu__icon._active::after {
+    bottom: 50%;
+    -webkit-transform: rotate(45deg) translate(0px, 50%);
+        -ms-transform: rotate(45deg) translate(0px, 50%);
+            transform: rotate(45deg) translate(0px, 50%);
+  }
+  .menu__icon._active::before {
+    top: 50%;
+    -webkit-transform: rotate(-45deg) translate(0px, -50%);
+        -ms-transform: rotate(-45deg) translate(0px, -50%);
+            transform: rotate(-45deg) translate(0px, -50%);
+  }
+}
+@media (max-width: 767px) {
+  .menu__nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 75px 30px 30px 30px;
+    -webkit-transition: left 0.3s ease;
+    -o-transition: left 0.3s ease;
+    transition: left 0.3s ease;
+    overflow: auto;
+  }
+  .menu__nav::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    height: 60px;
+    background-color: #5F515E;
+    z-index: 2;
+  }
+  .menu__nav._active {
+    left: 0;
+  }
+}
+@media (max-width: 767px) {
+  .menu__list > li {
+    margin: 0 0 15px 0;
+  }
+  .menu__list > li:last-child {
+    margin-bottom: 0;
+  }
+}
+@media (min-width: 767px) {
+  .menu__list {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    -webkit-column-gap: 50px;
+       -moz-column-gap: 50px;
+            column-gap: 50px;
+    row-gap: 20px;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+}
+@media (max-width: 767px) {
+  .menu__item::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1px;
+    background-color: #fff;
+    margin-top: 15px;
+  }
+}
+.menu__link {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #fff;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+.menu__link:hover {
+  color: #F0DDC6;
+}
+@media (max-width: 767px) {
+  .menu__link {
+    font-size: 36px;
+    display: block;
+  }
+}
+
+@media (max-width: 770px) {
+  .wedding {
+    padding-top: 60px;
+  }
+}
+.wedding__body {
+  padding: 266px 0 235px 0;
+  margin-bottom: 100px;
+  background: url(../img/wedding/wedding.jpg) no-repeat;
+  background-size: cover;
+  background-position: 64%, center;
+}
+@media (max-width: 770px) {
+  .wedding__body {
+    padding: 78px 0 64px 0;
+    margin-bottom: 60px;
+  }
+}
+@media (max-width: 770px) {
+  .wedding__container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    text-align: center;
+  }
+}
+.wedding__title {
+  font-family: "Poiret One";
+  font-weight: 400;
+  font-size: 60px;
+  line-height: 1.16;
+  color: #fff;
+  margin-bottom: 30px;
+}
+@media (max-width: 770px) {
+  .wedding__title {
+    font-size: 35px;
+    max-width: 185px;
+    margin-bottom: 162px;
+  }
+}
+.wedding__text {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 26px;
+  line-height: 1.38;
+  color: #fff;
+  margin-bottom: 67px;
+}
+@media (max-width: 770px) {
+  .wedding__text {
+    font-size: 20px;
+    margin-bottom: 27px;
+  }
+}
+.organization__wrapper {
+  margin-bottom: 100px;
+}
+@media (max-width: 770px) {
+  .organization__wrapper {
+    margin-bottom: 60px;
+  }
+}
+.organization__body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  -webkit-column-gap: 230px;
+     -moz-column-gap: 230px;
+          column-gap: 230px;
 }
-.header__list {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  gap: 52px;
+@media (max-width: 1340px) {
+  .organization__body {
+    -webkit-column-gap: 70px;
+       -moz-column-gap: 70px;
+            column-gap: 70px;
+  }
 }
-.header__link {
-  color: #fff;
+@media (max-width: 1024px) {
+  .organization__body {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    row-gap: 30px;
+  }
+}
+@media (max-width: 770px) {
+  .organization__body {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: start;
+  }
+}
+.organization__images {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 610px;
+          flex: 0 1 610px;
+  position: relative;
+  padding: 0 105px 97px 0;
+}
+.organization__images::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 51.6%;
+  height: 76.6%;
+  z-index: 2;
+  background: url(../img/organization/bouquet.jpg) no-repeat center center;
+  background-size: cover;
+}
+@media (max-width: 770px) {
+  .organization__images::after {
+    right: -10px;
+    width: 72%;
+    height: 83.5%;
+  }
+}
+@media (max-width: 770px) {
+  .organization__images {
+    padding: 0 0 97px 0;
+    width: 100%;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 340px;
+            flex: 0 1 340px;
+  }
+}
+.organization__img {
+  width: 100%;
+  height: 100%;
+}
+@media (max-width: 770px) {
+  .organization__img {
+    position: relative;
+    left: -10px;
+  }
+}
+.organization__content {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 1 440px;
+          flex: 0 1 440px;
+}
+@media (max-width: 1024px) {
+  .organization__content {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 1 auto;
+            flex: 0 1 auto;
+  }
+}
+.organization__info {
+  margin-bottom: 63px;
+}
+@media (max-width: 1024px) {
+  .organization__info {
+    margin-bottom: 30px;
+  }
+}
+.organization__text {
   font-family: "Montserrat";
   font-weight: 400;
   font-size: 16px;
-  line-height: 20px;
-  color: #fff;
+  line-height: 1.4;
+  color: #1E1E1E;
+}
+.organization__text:not(:last-child) {
+  margin-bottom: 24px;
+}
+@media (max-width: 1024px) {
+  .organization__text:not(:last-child) {
+    margin-bottom: 10px;
+  }
+}
+
+.director__body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-column-gap: 19px;
+     -moz-column-gap: 19px;
+          column-gap: 19px;
+}
+.director__photo {
+  width: 70px;
+  height: 70px;
+}
+.director__info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  row-gap: 8px;
+}
+.director__name {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.25;
+  color: #1E1E1E;
+}
+.director__about {
+  font-family: "Montserrat";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.21;
+  color: #484848;
+}
+
+body._lock {
+  overflow: hidden;
+}
+
+div[class*=__container] {
+  max-width: 1340px;
+  padding: 0 50px;
+  margin: 0 auto;
+}
+@media (max-width: 1026px) {
+  div[class*=__container] {
+    padding: 0 25px;
+  }
+}
+@media (max-width: 770px) {
+  div[class*=__container] {
+    padding: 0 10px;
+  }
 }

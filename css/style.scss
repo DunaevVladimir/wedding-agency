@@ -1,36 +1,31 @@
-@import './null.css';
-@import './fonts.css';
-@import './mixins.scss';
+@import './global/null.css';
+@import './global/fonts.css';
+@import './global/mixins';
+@import './global/_colors.scss';
+@import './_title.scss';
+@import './_button.scss';
+@import './_header.scss';
+@import './_wedding.scss';
+@import './_organization.scss';
 
-.header {
-	position: fixed;
-	display: flex;
-	justify-content: space-between;
-	background-color: #5F515E;
-	padding: 24px 100px;
-	width: 100%;
+body._lock {
+	overflow: hidden;
+}
 
-	&__logo {
+div[class*="__container"]{
+	max-width: 1340px;
+	padding: 0 50px;
+	margin: 0 auto;
+		@media (max-width: 1026px) {
+			padding: 0 25px;
+		}
+		@media (max-width: 770px) {
+			padding: 0 10px;
+		}
+}
 
-	}
+.main {
 
-	&__nav {
-		display: flex;
-		align-items: center;
-	}
-
-	&__list {
-		display: flex;
-		gap: 52px;
-	}
-
-	&__item {
-
-	}
-
-	&__link {
-		@include fontSettings('Montserrat', 400, 16px, 20px, #fff);
-	}
 }
 
 

@@ -12,28 +12,86 @@
 <body>
 	<wrapper>
 		<header class="header">
-			<div class="header__logo">
-				<img src="img/header/logo.svg" alt="logo">
+			<div class="header__container">
+				<div class="header__body">
+					<div class="header__logotip">
+						<a href="#"><img class="header__logo" src="img/header/logo.svg" alt="logo"></a>
+					</div>
+					<div class="header__menu menu">
+						<div class="menu__icon">
+							<span></span>
+						</div>
+						<nav class="menu__nav">
+							<ul class="menu__list">
+								<li class="menu__item"><a href="#" class="menu__link">О нас</a></li>
+								<li class="menu__item"><a href="#" class="menu__link">Услуги и стоимость</a></li>
+								<li class="menu__item"><a href="#" class="menu__link">Портфолио</a></li>
+								<li class="menu__item"><a href="#" class="menu__link">Контакты</a></li>
+							</ul>
+						</nav>
+					</div>
+				</div>
 			</div>
-			<nav class="header__nav">
-				<ul class="header__list">
-					<li class="header__item"><a href="#" class="header__link">О нас</a></li>
-					<li class="header__item"><a href="#" class="header__link">Услуги и стоимость</a></li>
-					<li class="header__item"><a href="#" class="header__link">Портфолио</a></li>
-					<li class="header__item"><a href="#" class="header__link">Контакты</a></li>
-				</ul>
-			</nav>
 		</header>
 		<main class="main">
-			<section class="wedding-agency">
-				<h1 class="wedding-agency__title"></h1>
-				<p class="wedding-agency__text"></p>
-				<button class="wedding-agency__button"></button>
+			<section class="wedding">
+				<div class="wedding__body">
+					<div class="wedding__container">
+						<h1 class="title _white-mb30">Свадебное агентство</h1>
+						<p class="wedding__text">Сосредоточтесь на моменте, <br> все остальное мы возьмем на себя</p>
+						<button class="button">Оставить заявку</button>
+					</div>
+				</div>
+			</section>
+			<section class="organization">
+				<div class="organization__wrapper">
+					<div class="organization__container">
+						<div class="organization__title">
+							<h2 class="title _decor">Организация свадебных торжеств любой сложности</h2>
+						</div>
+						<div class="organization__body">
+							<div class="organization__images">
+								<img src="img/organization/textile.jpg" alt="textile" class="organization__img">
+							</div>
+							<div class="organization__content">
+								<div class="organization__info">
+									<p class="organization__text">
+										Когда я создавала свое агентство, моей миссией было и есть - сделать каждую свадьбу
+										волшебнойи
+										неповторимой! Организовать все процессы так, чтобы молодожены могли смело довериться нашей
+										команде и наслаждаться друг другом в такой важный день!
+									</p>
+									<p class="organization__text">
+										Мы каждый день получаем огромное количество благодарных отзывов от наших клиентов, поэтому
+										я
+										твердо уверена в качестве оказываемых услуг.
+										Я благодарна каждой паре и своей команде! Буду рада видеть каждого в стенах нашего
+										агентства.
+									</p>
+								</div>
+								<div class="director">
+									<div class="director__body">
+										<img src="img/organization/director-photo.jpg" alt="director-photo"
+											class="director__photo">
+										<div class="director__info">
+											<div class="director__name">
+												Мария Преображенская
+											</div>
+											<div class="director__about">
+												Создательница и директор агентства
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</section>
 		</main>
 		<footer class="footer"></footer>
 	</wrapper>
-	<script src="script.js"></script>
+	<script src="menu.js"></script>
 </body>
 
 </html>
